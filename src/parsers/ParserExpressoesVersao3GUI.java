@@ -29,7 +29,7 @@ public class ParserExpressoesVersao3GUI extends EngineFrame {
         ep = new ParserExpressoesVersao3( expressao );
         resultado = ep.getValor();
         
-        inputDialog = new GuiInputDialog( "Nova Expressão", "Formato:\n  A = +\n  S = -\n  M = *\n  D = /\n  L = (\n  R = )", true, this );
+        inputDialog = new GuiInputDialog( "Nova Expressão", "Expressão:", true, this );
         
     }
     
@@ -47,7 +47,6 @@ public class ParserExpressoesVersao3GUI extends EngineFrame {
         if ( inputDialog.isOkButtonPressed() || inputDialog.isEnterKeyPressed() ) {
             expressao = inputDialog.getValue();
             if ( expressao != null ) {
-                expressao = substituir( expressao );
                 ep = new ParserExpressoesVersao3( expressao );
                 resultado = ep.getValor();
             }
@@ -70,10 +69,8 @@ public class ParserExpressoesVersao3GUI extends EngineFrame {
         
         inputDialog.draw();
         
-    }
-    
-    private String substituir( String expressao ) {
-        return expressao.replace( "A", "+" ).replace( "S", "-" ).replace( "M", "*" ).replace( "D", "/" ).replace( "L", "(" ).replace( "R", ")" );
+        drawText( "Clique com o botão direito para inserir uma nova expressão!", 10, getScreenHeight() - 20, 10, BLACK );
+        
     }
     
     public static void main( String[] args ) {
