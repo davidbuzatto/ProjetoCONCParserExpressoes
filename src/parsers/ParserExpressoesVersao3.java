@@ -25,7 +25,7 @@ import parsers.v3.ValorConstante;
  *     opMultiplicacao -> "*" | "/" .
  * 
  *     fator -> valorConstante | "(" expressao ")" .
- *     valorConstante -> [0..1]+ .
+ *     valorConstante -> [0..9]+ .
  * 
  * @author Prof. Dr. David Buzatto
  */
